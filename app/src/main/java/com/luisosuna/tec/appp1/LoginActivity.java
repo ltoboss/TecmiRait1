@@ -3,6 +3,7 @@ package com.luisosuna.tec.appp1;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -328,7 +329,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 public void onResponse(Call<User> call, Response<User> response) {
                     if (response.isSuccessful()) {
 
+
+
+
+
                         Log.d("LOGINHERE", response.body().toString());
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
 
                     } else {
 
